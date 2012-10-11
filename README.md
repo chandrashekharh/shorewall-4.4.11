@@ -21,7 +21,7 @@ Shorewall supports JSON data serialization format. The format for both the reque
     <th>Verb</th><th>URI</th><th>Description</th>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/conf</td><td>Create a new shorewall configuaration service for shorewall in VCG</td>
+    <td>POST</td><td>/shorewall/conf</td><td>Create a new shorewall configuaration service for shorewall in VCG</td>
   </tr>
   <tr>
     <td>GET</td><td>/shorewall/:shorewall-ID/conf</td><td>Describes an installed shorewall configuaration service in VCG by service ID</td>
@@ -30,7 +30,7 @@ Shorewall supports JSON data serialization format. The format for both the reque
     <td>DELETE</td><td>/shorewall/:shorewall-ID/conf</td><td>Delete an installed shorewall configuaration service in VCG by service ID</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/zones</td><td>Create a new shorewall zones configuartion service for shorewall in VCG</td>
+    <td>POST</td><td>/shorewall/zones</td><td>Create a new shorewall zones configuartion service for shorewall in VCG</td>
   </tr>
   <tr>
     <td>GET</td><td>/shorewall/:shorewall-ID/zones</td><td>Describes an installed  shorewall zones configuartion service in VCG by service ID</td>
@@ -39,7 +39,7 @@ Shorewall supports JSON data serialization format. The format for both the reque
     <td>DELETE</td><td>/shorewall/:shorewall-ID/zones</td><td>Delete an installed shorewall zones configuartion service in VCG by service ID</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/interfaces</td><td>Create a new shorewall interfaces configuartion service for shorewall in VCG</td>
+    <td>POST</td><td>/shorewall/interfaces</td><td>Create a new shorewall interfaces configuartion service for shorewall in VCG</td>
   </tr>
   <tr>
     <td>GET</td><td>/shorewall/:shorewall-ID/interfaces</td><td>Describes an installed shorewall interfaces configuartion service in VCG by service ID</td>
@@ -48,7 +48,7 @@ Shorewall supports JSON data serialization format. The format for both the reque
     <td>DELETE</td><td>/shorewall/:shorewall-ID/interfaces</td><td>Delete an installed  shorewall interfaces configuartion service in VCG by service ID</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/policy</td><td>Create a new shorewall policy configuartion service for shorewall in VCG</td>
+    <td>POST</td><td>/shorewall/policy</td><td>Create a new shorewall policy configuartion service for shorewall in VCG</td>
   </tr>
   <tr>
     <td>GET</td><td>/shorewall/:shorewall-ID/policy</td><td>Describes an installed shorewall policy configuartion service in VCG by service ID</td>
@@ -57,7 +57,7 @@ Shorewall supports JSON data serialization format. The format for both the reque
     <td>DELETE</td><td>/shorewall/:shorewall-ID/policy</td><td>Delete an installed  shorewall policy configuartion service in VCG by service ID</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/rules/</td><td>Create a new shorewall rules configuartion service for shorewall in VCG</td>
+    <td>POST</td><td>/shorewall/rules/</td><td>Create a new shorewall rules configuartion service for shorewall in VCG</td>
   </tr>
   <tr>
     <td>GET</td><td>/shorewall/:shorewall-ID/rules</td><td>Describes an installed shorewall rules configuartion service in VCG by service ID</td>
@@ -66,22 +66,22 @@ Shorewall supports JSON data serialization format. The format for both the reque
     <td>DELETE</td><td>/shorewall/:shorewall-ID/rules</td><td>Delete an installed  shorewall rules configuartion service in VCG by service ID</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/start/</td><td>Start a new shorewall service for shorewall-lite client from shorewall server in VCG</td>
+    <td>POST</td><td>/shorewall/start/</td><td>Start a new shorewall service for shorewall-lite client from shorewall server in VCG</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/restart</td><td>Restart a new shorewall service for shorewall-lite client from shorewall server in VCG</td>
+    <td>POST</td><td>/shorewall/restart</td><td>Restart a new shorewall service for shorewall-lite client from shorewall server in VCG</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/status</td><td>Get the status of running shorewall rules service on shorewall-lite clients from shorewall server in VCG by service ID</td>
+    <td>POST</td><td>/shorewall/status</td><td>Get the status of running shorewall rules service on shorewall-lite clients from shorewall server in VCG by service ID</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/stop</td><td>Stop the running shorewall rules service on shorewall-lite clients from shorewall server in VCG </td>
+    <td>POST</td><td>/shorewall/stop</td><td>Stop the running shorewall rules service on shorewall-lite clients from shorewall server in VCG </td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/clear</td><td>Clear the running shorewall rules service on shorewall-lite clients from shorewall server in VCG</td>
+    <td>POST</td><td>/shorewall/clear</td><td>Clear the running shorewall rules service on shorewall-lite clients from shorewall server in VCG</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/:shorewall-ID/routestopped</td><td>Hosts that are accessible when the firewall is stopped or is being stopped on shorewall-lite clients from shorewall server in VCG</td>
+    <td>POST</td><td>/shorewall/routestopped</td><td>Hosts that are accessible when the firewall is stopped or is being stopped on shorewall-lite clients from shorewall server in VCG</td>
   </tr>
 
 
@@ -91,24 +91,24 @@ Shorewall supports JSON data serialization format. The format for both the reque
 Shorewall  Configuration API's:
 --------------------------------
 
-  1. POST /services/service-id/shorewall/shorewall.conf
-  2. POST /services/service-id/shorewall/policy/(net/loc/dmz/fw/all)
-  3. POST /services/service-id/shorewall/rules/(accept/reject/drop/dnat/redirect/nonat/queue/nfqueue) 
-  4. POST /services/service-id/shorewall/zones/(fw/net/loc/dmz)
-  5. POST /services/service-id/shorewall/interfaces/(net/loc/dmz)
-  6. POST /services/service-id/shorewall/routestopped 
+  1. POST /shorewall/conf
+  2. POST /shorewall/policy/(net/loc/dmz/fw/all)
+  3. POST /shorewall/rules/(accept/reject/drop/dnat/redirect/nonat/queue/nfqueue) 
+  4. POST /shorewall/zones/(fw/net/loc/dmz)
+  5. POST /shorewall/interfaces/(net/loc/dmz)
+  6. POST /shorewall/routestopped 
 
 POST API :
 ----------
 
-**POST  /shorewall/:shorewall-ID/conf**
+**POST  /shorewall/conf**
 
 Conf API will configure the shorewall.conf file, which is a global configuration file for shorewall, This file sets options that apply to Shorewall as a whole.
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST  /shorewall/:shorewall-ID/conf                   Creates/updates the configurations of shorewall.conf file
+    POST  /shorewall/conf                                 Creates/updates the configurations of shorewall.conf file
 
 ###Request JSON : 
   
@@ -208,6 +208,7 @@ Conf API will configure the shorewall.conf file, which is a global configuration
   
 
 ###Response JSON :
+
     {
         "id": "d6bd1f89-dfee-44a6-8863-8a0802ee7acd",
         "config":
@@ -445,17 +446,17 @@ GET API:
 Interfaces API's configures the shorewall interfaces file which serves to define the firewall's network interfaces to Shorewall. The order of entries in this file is not significant in determining zone composition.
 
 
-  1. /shorewall/:shorewall-ID/interfaces/net
-  2. /shorewall/:shorewall-ID/interfaces/loc
-  3. /shorewall/:shorewall-ID/interfaces/dmz
+  1. /shorewall/interfaces/net
+  2. /shorewall/interfaces/loc
+  3. /shorewall/interfaces/dmz
 
 
-**POST /shorewall/:shorewall-ID/interfaces/net**
+**POST /shorewall/interfaces/net**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /services/service-id/shorewall/interfaces/net    Configures the net zone interfaces to apply rules 
+    POST /shorewall/interfaces/net                        Configures the net zone interfaces to apply rules 
 
 
 ###Request JSON:
@@ -484,12 +485,12 @@ Interfaces API's configures the shorewall interfaces file which serves to define
     }  
 
 
-**POST /shorewall/:shorewall-ID/interfaces/loc**
+**POST /shorewall/interfaces/loc**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /services/service-id/shorewall/interfaces/loc    Configures the loc zone interfaces to apply rules 
+    POST /shorewall/interfaces/loc                        Configures the loc zone interfaces to apply rules 
 
 ###Request JSON:
 
@@ -516,12 +517,12 @@ Interfaces API's configures the shorewall interfaces file which serves to define
     }  
 
     
-**POST /shorewall/:shorewall-ID/interfaces/dmz**
+**POST /shorewall/interfaces/dmz**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /services/service-id/shorewall/interfaces/dmz    Configures the dmz zone interfaces to apply rules     
+    POST /shorewall/interfaces/dmz                        Configures the dmz zone interfaces to apply rules     
     
     
 ###Request JSON:
@@ -555,18 +556,18 @@ Interfaces API's configures the shorewall interfaces file which serves to define
 Creates zones configurations files entry for zones, Zones 4 API"s available 
 API's configures the zones file which declares our network zones. we can specify the hosts in each zone through entries in interfaces file or hosts
 
-  1. /shorewall/:shorewall-ID/zones/fw
-  2. /shorewall/:shorewall-ID/zones/loc
-  3. /shorewall/:shorewall-ID/zones/net
-  4. /shorewall/:shorewall-ID/zones/dmz
+  1. /shorewall/zones/fw
+  2. /shorewall/zones/loc
+  3. /shorewall/zones/net
+  4. /shorewall/zones/dmz
 
 
-**POST /shorewall/:shorewall-ID/zones/fw**
+**POST /shorewall/zones/fw**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/zones/fw                Configures the firewall zones file entry
+    POST /shorewall/zones/fw                              Configures the firewall zones file entry
 
 ###Request JSON:
 
@@ -595,12 +596,12 @@ API's configures the zones file which declares our network zones. we can specify
     }  
 
 
-**POST /shorewall/:shorewall-ID/zones/loc**
+**POST /shorewall/zones/loc**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/zones/loc               Configures the loc zones file entry
+    POST /shorewall/zones/loc                             Configures the loc zones file entry
 
 ###Request JSON:
 
@@ -630,12 +631,12 @@ API's configures the zones file which declares our network zones. we can specify
 
 
 
-**POST /shorewall/:shorewall-ID/zones/net**
+**POST /shorewall/zones/net**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/zones/net               Configures the net zones file entry
+    POST /shorewall/zones/net                             Configures the net zones file entry
 
 ###Request JSON:
 
@@ -664,12 +665,12 @@ API's configures the zones file which declares our network zones. we can specify
     }  
 
     
-**POST /shorewall/:shorewall-ID/zones/dmz**
+**POST /shorewall/zones/dmz**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/zones/dmz               Configures the dmz zones file entry
+    POST /shorewall/zones/dmz                             Configures the dmz zones file entry
 
 ###Request JSON:
 
@@ -704,19 +705,19 @@ API's configures the zones file which declares our network zones. we can specify
 Policy API's configures the policy file, which defines the high-level policy for connections between zones defined in shorewall-zones. The order of entries in this file is important, This file determines what to do with a new connection request if we don't get a match from the rules file . For  each source/destination pair, the file is processed in order until a match is found ("all" will match any client or server).
 
 Policy configuration is having 5 API's,
-  1. /shorewall/:shorewall-ID/policy/fw
-  2. /shorewall/:shorewall-ID/policy/net
-  3. /shorewall/:shorewall-ID/policy/loc
-  4. /shorewall/:shorewall-ID/policy/dmz
-  5. /shorewall/:shorewall-ID/policy/all
+  1. /shorewall/policy/fw
+  2. /shorewall/policy/net
+  3. /shorewall/policy/loc
+  4. /shorewall/policy/dmz
+  5. /shorewall/policy/all
 
 
-**POST /shorewall/:shorewall-ID/policy/fw**
+**POST /shorewall/policy/fw**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/policy/fw               Creates Policy configurations files entry for policy 
+    POST /shorewall/policy/fw                             Creates Policy configurations files entry for policy 
 
 ###Request JSON:
 
@@ -746,12 +747,12 @@ Policy configuration is having 5 API's,
     }  
 
     
-**POST /shorewall/:shorewall-ID/policy/loc**
+**POST /shorewall/policy/loc**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/policy/loc              Creates Policy configurations rules entry for local zones  
+    POST /shorewall/policy/loc                            Creates Policy configurations rules entry for local zones  
 
 ###Request JSON:
 
@@ -781,12 +782,12 @@ Policy configuration is having 5 API's,
     }  
 
     
-**POST /shorewall/:shorewall-ID/policy/net**
+**POST /shorewall/policy/net**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/policy/net              Creates Policy configurations rules entry for net zones
+    POST /shorewall/policy/net                            Creates Policy configurations rules entry for net zones
 
 ###Request JSON:
 
@@ -816,12 +817,12 @@ Policy configuration is having 5 API's,
     }  
 
 
-**POST /shorewall/:shorewall-ID/policy/dmz**
+**POST /shorewall/policy/dmz**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/policy/dmz              Creates Policy configurations rules entry for dmz zones
+    POST /shorewall/policy/dmz                            Creates Policy configurations rules entry for dmz zones
 
 ###Request JSON:
 
@@ -852,12 +853,12 @@ Policy configuration is having 5 API's,
 
 
  
-**POST /shorewall/:shorewall-ID/policy/all**
+**POST /shorewall/policy/all**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/policy/all              Creates Policy configurations rules entry for dmz zones
+    POST /shorewall/policy/all                            Creates Policy configurations rules entry for dmz zones
 
 ###Request JSON:
 
@@ -892,20 +893,20 @@ Policy configuration is having 5 API's,
 
 Rules API's will create/updates rules file configurations, Entries in this rules configuration file govern connection establishment by defining exceptions to the policies layed out in shorewall-policy. By default, subsequent requests and responses are automatically allowed using connection tracking. For any particular (source,dest) pair of zones, the rules are evaluated in the order in which they appear in this file and the first terminating match is the one that determines the disposition of the request. All rules are terminating except LOG and COUNT rules.
 
-  1. /shorewall/service-id/shorewall/rules/accept
-  2. /shorewall/service-id/shorewall/rules/drop
-  3. /shorewall/service-id/shorewall/rules/reject
-  4. /shorewall/service-id/shorewall/rules/dnat
-  5. /shorewall/service-id/shorewall/rules/nonat
-  6. /shorewall/service-id/shorewall/rules/queue
-  7. /shorewall/service-id/shorewall/rules/nfqueue
+  1. /shorewall/shorewall/rules/accept
+  2. /shorewall/shorewall/rules/drop
+  3. /shorewall/shorewall/rules/reject
+  4. /shorewall/shorewall/rules/dnat
+  5. /shorewall/shorewall/rules/nonat
+  6. /shorewall/shorewall/rules/queue
+  7. /shorewall/shorewall/rules/nfqueue
 
-**POST /shorewall/:shorewall-ID/rules/accept**
+**POST /shorewall/rules/accept**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/service-id/shorewall/rules/accept     Creates the shorewall rules ACCEPT configuration file entry  in rules
+    POST /shorewall/rules/accept                          Creates the shorewall rules ACCEPT configuration file entry  in rules
 
 
 ###Request JSON:
@@ -953,12 +954,12 @@ Rules API's will create/updates rules file configurations, Entries in this rules
     }  
 
     
-**POST /shorewall/:shorewall-ID/rules/drop**
+**POST /shorewall/rules/drop**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/service-id/shorewall/rules/drop       Creates the shorewall rules DROP configuration file entry  in rules
+    POST /shorewall/rules/drop                            Creates the shorewall rules DROP configuration file entry  in rules
 
 
 ###Request JSON:
@@ -1006,12 +1007,12 @@ Rules API's will create/updates rules file configurations, Entries in this rules
     }  
 
 
-**POST /shorewall/:shorewall-ID/rules/reject**
+**POST /shorewall/rules/reject**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/service-id/shorewall/rules/reject     Creates the shorewall rules REJECT configuration file entry 
+    POST /shorewall/rules/reject                          Creates the shorewall rules REJECT configuration file entry 
 
 
 ###Request JSON:
@@ -1060,12 +1061,12 @@ Rules API's will create/updates rules file configurations, Entries in this rules
 
 
 
-**POST /shorewall/:shorewall-ID/rules/dnat**
+**POST /shorewall/rules/dnat**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/service-id/shorewall/rules/dnat       Creates the shorewall rules DNAT configuration file entry 
+    POST /shorewall/rules/dnat                            Creates the shorewall rules DNAT configuration file entry 
 
 
 ###Request JSON:
@@ -1114,12 +1115,12 @@ Rules API's will create/updates rules file configurations, Entries in this rules
 
 
 
-**POST /shorewall/:shorewall-ID/rules/nonat**
+**POST /shorewall/rules/nonat**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/service-id/shorewall/rules/nonat      Creates the shorewall rules NONAT configuration file entry 
+    POST /shorewall/rules/nonat                           Creates the shorewall rules NONAT configuration file entry 
 
 
 ###Request JSON:
@@ -1168,12 +1169,12 @@ Rules API's will create/updates rules file configurations, Entries in this rules
 
 
 
-**POST /shorewall/:shorewall-ID/rules/queue**
+**POST /shorewall/rules/queue**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/service-id/shorewall/rules/queue      Creates the shorewall rules QUEUE configuration file entry 
+    POST /shorewall/rules/queue                           Creates the shorewall rules QUEUE configuration file entry 
 
 
 ###Request JSON:
@@ -1222,12 +1223,12 @@ Rules API's will create/updates rules file configurations, Entries in this rules
 
 
 
-**POST /shorewall/:shorewall-ID/rules/nfqueue**
+**POST /shorewall/rules/nfqueue**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/service-id/shorewall/rules/nfqueue    Creates the shorewall rules NFQUEUE configuration file entry 
+    POST /shorewall/rules/nfqueue                         Creates the shorewall rules NFQUEUE configuration file entry 
 
 
 ###Request JSON:
@@ -1278,12 +1279,12 @@ Rules API's will create/updates rules file configurations, Entries in this rules
 
 This file is used to define the hosts that are accessible when the firewall is stopped or is being stopped.
 
-**POST /shorewall/:shorewall-ID/routestopped**
+**POST /shorewall/routestopped**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/service-id/shorewall/routestopped     Creates the shorewall routestopped configuration file entry 
+    POST /shorewall/shorewall/routestopped                Creates the shorewall routestopped configuration file entry 
 
 
 ###Request JSON:
@@ -1323,12 +1324,12 @@ This API  get validates Input JSON format  by schema,  check the shorewall servi
 It downloads the capabilities files for respective client from the repository link and start the compilation of the configurations, creates firewall and firewall.conf files and copy to clients /var/lib/shorewall-lite directory  and starts the command to be executed on client 
 command “/sbin/shorewall   start”
 
-**POST /shorewall/:shorewall-ID/start :**
+**POST /shorewall/start :**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/start                 Start of the firewall service on shorewall-lite
+    POST /shorewall/start                                 Start of the firewall service on shorewall-lite
 
 ###Request JSON for start:
 
@@ -1351,12 +1352,12 @@ command “/sbin/shorewall   start”
     }
 
 
-**POST /shorewall/:shorewall-ID/restart :**
+**POST /shorewall/restart :**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/restart                 Restart of the firewall service on shorewall-lite
+    POST /shorewall/restart                               Restart of the firewall service on shorewall-lite
 
 
 ###Request JSON for restart:
@@ -1387,12 +1388,12 @@ command “/sbin/shorewall   start”
 Run the shorewall status command from shorewall server through ssh, It will display the firewall runningstatus of  shorewall-lite clients.
 This post display the Status of  the Shorewall service running on shorewall-lite clients
 
-**POST /shorewall/:shorewall-ID/status :**
+**POST /shorewall/status :**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/:shorewall-ID/status                  Get the running status of the shorewall-lite clients
+    POST /shorewall/status                                Get the running status of the shorewall-lite clients
 
 ###Request JSON  for shorewall STATUS :
 
@@ -1422,12 +1423,12 @@ This post display the Status of  the Shorewall service running on shorewall-lite
 Run the shorewall stop command from shorewall server through ssh, It will stops the firewall running on shorewall-lite clients.
 
 
-**POST /shorewall/:shorewall-ID/stop :**
+**POST /shorewall/stop :**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/stop                    Stop the firewall service/configurations on respective shorewall-lite clients  
+    POST /shorewall/stop                                  Stop the firewall service/configurations on respective shorewall-lite clients  
 
 
 ###Request JSON for STOP/CLEAR :
@@ -1453,12 +1454,12 @@ Run the shorewall stop command from shorewall server through ssh, It will stops 
 
 Run the shorewall clear command from shorewall server through ssh, It will clears the firewall running configurations on shorewall-lite clients.
 
-**POST /shorewall/:shorewall-ID/clear :**
+**POST /shorewall/clear :**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/:shorewall-ID/clear                   Clear the firewall service/configurations on respective shorewall-lite clients  
+    POST /shorewall/clear                                 Clear the firewall service/configurations on respective shorewall-lite clients  
 
 
 ###Request JSON for STOP/CLEAR :
