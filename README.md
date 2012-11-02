@@ -1431,7 +1431,7 @@ Run the shorewall stop command from shorewall server through ssh, It will stops 
     POST /shorewall/stop                                  Stop the firewall service/configurations on respective shorewall-lite clients  
 
 
-###Request JSON for STOP/CLEAR :
+###Request JSON for STOP :
 
     {
         "commonname": "hostname of client",
@@ -1462,7 +1462,7 @@ Run the shorewall clear command from shorewall server through ssh, It will clear
     POST /shorewall/clear                                 Clear the firewall service/configurations on respective shorewall-lite clients  
 
 
-###Request JSON for STOP/CLEAR :
+###Request JSON for CLEAR :
 
     {
         "commonname": "hostname of client",
