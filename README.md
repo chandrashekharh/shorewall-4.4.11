@@ -1,5 +1,5 @@
-cloudflash-firewall (Shorewall-4.4.11)
-====================================
+cloudflash-firewall 
+===================
 
 Shorewall Central Administrative Server : 
 ----------------------------------------
@@ -21,67 +21,58 @@ Shorewall supports JSON data serialization format. The format for both the reque
     <th>Verb</th><th>URI</th><th>Description</th>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/conf</td><td>Create a new shorewall configuaration service for shorewall in VCG</td>
+    <td>POST</td><td>/shorewall/server/:group/conf</td><td>Create a new shorewall.conf file configuarations for shorewall in VCG</td>
   </tr>
   <tr>
-    <td>GET</td><td>/shorewall/:shorewall-ID/conf</td><td>Describes an installed shorewall configuaration service in VCG by service ID</td>
+    <td>GET</td><td>/shorewall/server/:group/conf</td><td>Describes an installed shorewall.conf file configuarations in VCG </td>
   </tr>
   <tr>
-    <td>DELETE</td><td>/shorewall/:shorewall-ID/conf</td><td>Delete an installed shorewall configuaration service in VCG by service ID</td>
+    <td>DELETE</td><td>/shorewall/server/:group/conf</td><td>Delete an installed shorewall.conf file configuarations in VCG </td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/zones</td><td>Create a new shorewall zones configuartion service for shorewall in VCG</td>
+    <td>POST</td><td>/shorewall/server/:group/:entity/:entityid</td><td>Create a new shorewall zones, interfaces, policy, rules & routestopped configuartions for shorewall in VCG</td>
   </tr>
   <tr>
-    <td>GET</td><td>/shorewall/:shorewall-ID/zones</td><td>Describes an installed  shorewall zones configuartion service in VCG by service ID</td>
+      <td>GET</td><td>/shorewall/server/:group/:entity/:entityid</td><td>Describes the configurations of the shorewall files and DB by shorewall ID </td>
   </tr>
   <tr>
-    <td>DELETE</td><td>/shorewall/:shorewall-ID/zones</td><td>Delete an installed shorewall zones configuartion service in VCG by service ID</td>
+    <td>DELETE</td><td>/shorewall/server/:group/:entity/:entityid</td><td>Delete configurations for shorewall files and DB  by shorewall ID</td>
+  </tr>  
+  <tr>
+    <td>POST</td><td>/shorewall/server/:group/:action</td><td>To compile(build/rebuild) for firewall, firewall.conf files and create capabilities file for clients  in shorewall server</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/interfaces</td><td>Create a new shorewall interfaces configuartion service for shorewall in VCG</td>
+    <td>POST</td><td>/shorewall/capabilities/server/:group</td><td>Get the capabilities configs from  orchestration in shorewall server</td>
   </tr>
   <tr>
-    <td>GET</td><td>/shorewall/:shorewall-ID/interfaces</td><td>Describes an installed shorewall interfaces configuartion service in VCG by service ID</td>
+    <td>GET</td><td>/shorewall/server/firewall/:group/scripts</td><td>To get firewall and firewall.conf files from shorewall server to orchestration</td>
   </tr>
   <tr>
-    <td>DELETE</td><td>/shorewall/:shorewall-ID/interfaces</td><td>Delete an installed  shorewall interfaces configuartion service in VCG by service ID</td>
+    <td>GET</td><td>/shorewall/client/capabilities/:group</td><td>To get the capabilities file from shorewall-lite clients to orchestration </td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/policy</td><td>Create a new shorewall policy configuartion service for shorewall in VCG</td>
+    <td>POST</td><td>/shorewall/firewallfiles/client</td><td>Describes to get the firewall and firewall.conf files from orchestration to shorewall-lite clients</td>
   </tr>
   <tr>
-    <td>GET</td><td>/shorewall/:shorewall-ID/policy</td><td>Describes an installed shorewall policy configuartion service in VCG by service ID</td>
+    <td>POST</td><td>/shorewall/client/:group/:action</td><td>To Start/restart/status/clear the firewall service on VCG</td>
   </tr>
   <tr>
-    <td>DELETE</td><td>/shorewall/:shorewall-ID/policy</td><td>Delete an installed  shorewall policy configuartion service in VCG by service ID</td>
+    <td>GET</td><td>/shorewall/server/:group/:entity/:id</td><td>Describes an installed shorewall configuartion service in VCG by service ID</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/rules/</td><td>Create a new shorewall rules configuartion service for shorewall in VCG</td>
+    <td>GET</td><td>/shorewall/server/:group/conf</td><td>Describes an installed  shorewall.conf configuartion service in VCG</td>
   </tr>
   <tr>
-    <td>GET</td><td>/shorewall/:shorewall-ID/rules</td><td>Describes an installed shorewall rules configuartion service in VCG by service ID</td>
+    <td>GET</td><td>/shorewall/server/:group/:entity</td><td>Describes the installed shorewall files configuartions of respective clients</td>
   </tr>
   <tr>
-    <td>DELETE</td><td>/shorewall/:shorewall-ID/rules</td><td>Delete an installed  shorewall rules configuartion service in VCG by service ID</td>
+    <td>GET</td><td>/shorewall/server/:group</td><td>Describes the installed shorewall configuartion of a shorewall-lite client</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/start/</td><td>Start a new shorewall service for shorewall-lite client from shorewall server in VCG</td>
+    <td>DELETE</td><td>/shorewall/server/:group/conf</td><td>Deletes the configurations of shorewall.conf with respective client group</td>
   </tr>
   <tr>
-    <td>POST</td><td>/shorewall/restart</td><td>Restart a new shorewall service for shorewall-lite client from shorewall server in VCG</td>
-  </tr>
-  <tr>
-    <td>POST</td><td>/shorewall/status</td><td>Get the status of running shorewall rules service on shorewall-lite clients from shorewall server in VCG by service ID</td>
-  </tr>
-  <tr>
-    <td>POST</td><td>/shorewall/stop</td><td>Stop the running shorewall rules service on shorewall-lite clients from shorewall server in VCG </td>
-  </tr>
-  <tr>
-    <td>POST</td><td>/shorewall/clear</td><td>Clear the running shorewall rules service on shorewall-lite clients from shorewall server in VCG</td>
-  </tr>
-  <tr>
-    <td>POST</td><td>/shorewall/routestopped</td><td>Hosts that are accessible when the firewall is stopped or is being stopped on shorewall-lite clients from shorewall server in VCG</td>
+    <td>DELETE</td><td>/shorewall/server/:group/:entity/:id</td><td>Deletes the configurations of shorewall.conf with respective shorewall service ID</td>
   </tr>
 
 
@@ -91,30 +82,29 @@ Shorewall supports JSON data serialization format. The format for both the reque
 Shorewall  Configuration API's:
 --------------------------------
 
-  1. POST /shorewall/conf
-  2. POST /shorewall/policy/(net/loc/dmz/fw/all)
-  3. POST /shorewall/rules/(accept/reject/drop/dnat/redirect/nonat/queue/nfqueue) 
-  4. POST /shorewall/zones/(fw/net/loc/dmz)
-  5. POST /shorewall/interfaces/(net/loc/dmz)
-  6. POST /shorewall/routestopped 
+  1. POST /shorewall/server/:group/conf
+  2. POST /shorewall/server/:group/policy/:id
+  3. POST /shorewall/server/:group/rules/:id
+  4. POST /shorewall/server/:group/zones/:id
+  5. POST /shorewall/server/:group/interfaces/:id
+  6. POST /shorewall/server/:group/routestopped/:id 
 
 POST API :
 ----------
 
-**POST  /shorewall/conf**
+**POST  /shorewall/server/:group/conf**
 
 Conf API will configure the shorewall.conf file, which is a global configuration file for shorewall, This file sets options that apply to Shorewall as a whole.
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST  /shorewall/conf                                 Creates/updates the configurations of shorewall.conf file
+    POST  /shorewall/server/:group/conf                   Creates/updates the configurations of shorewall.conf file
 
 ###Request JSON : 
   
 
     {
-        "commonname": "hostname of client",
         "STARTUP_ENABLED": "Yes",
         "VERBOSITY": "1",
         "LOGFILE": "/var/log/messages",
@@ -210,10 +200,11 @@ Conf API will configure the shorewall.conf file, which is a global configuration
 ###Response JSON :
 
     {
-        "id": "d6bd1f89-dfee-44a6-8863-8a0802ee7acd",
-        "config":
-        {
-            "commonname": "hostname of client",
+       "id": "client2",
+       "entityName": "shorewall",
+       "group": "client2",
+       "config":
+       {
             "STARTUP_ENABLED": "Yes",
             "VERBOSITY": "1",
             "LOGFILE": "/var/log/messages",
@@ -238,7 +229,7 @@ Conf API will configure the shorewall.conf file, which is a global configuration
             "SHOREWALL_SHELL": "/bin/sh",
             "SUBSYSLOCK": "",
             "MODULESDIR": "",
-            "CONFIG_PATH": "/etc/shorewall:/usr/share/shorewall",
+            "CONFIG_PATH": "/etc/shorewall:/usr/share/shorewall:/config/shorewall/:group",
             "RESTOREFILE": "",
             "IPSECFILE": "zones",
             "LOCKFILE": "",
@@ -312,18 +303,18 @@ Conf API will configure the shorewall.conf file, which is a global configuration
 DELETE API:
 -----------
 
-    Verb  URI                                             Description
-    DELETE /shorewall/:shorewall-ID/conf                  Deletes the configurations on shorewall.conf file
+    Verb   URI                                             Description
+    DELETE /shorewall/server/:group/conf                   Deletes the configurations on shorewall.conf file
 
 ###Request Header:
 
-DELETE /shorewall/:shorewall-ID/conf
+DELETE /shorewall/server/:group/conf
 
 Note: The Delete request does not require a message body. on success returns JSON data with the shorewall configuartions deleted on VCG. with deleted as true, Each delete shorewall service is identified by ID
     
-###Response JSON :
+###Response status :
 
-    { deleted: true }
+    204
 
 
 GET API:
@@ -334,221 +325,170 @@ GET API:
 **Describe Service:**
 
     Verb  URI                                                                 Description
-    GET /shorewall/:shorewall-ID/conf                                         Description of the API get configured
+    GET /shorewall/server/:group/conf                                         Description of the API get configured
 
 ###Response JSON :
 
-    {
-        "shorewallconf":
-        [
-            {
-                "id": "d6bd1f89-dfee-44a6-8863-8a0802ee7acd",
-                "config":
-                {
-                    "commonname": "hostname of client",
-                    "STARTUP_ENABLED": "Yes",
-                    "VERBOSITY": "1",
-                    "LOGFILE": "/var/log/messages",
-                    "STARTUP_LOG": "/var/log/shorewall-init.log",
-                    "LOG_VERBOSITY": "2",
-                    "LOGFORMAT": "Shorewall:%s:%s:",
-                    "LOGTAGONLY": "No",
-                    "LOGRATE": "",
-                    "LOGBURST": "",
-                    "LOGALLNEW": "",
-                    "BLACKLIST_LOGLEVEL": "",
-                    "MACLIST_LOG_LEVEL": "info",
-                    "TCP_FLAGS_LOG_LEVEL": "info",
-                    "SMURF_LOG_LEVEL": "info",
-                    "LOG_MARTIANS": "Yes",
-                    "IPTABLES": "",
-                    "IP": "",
-                    "TC": "",
-                    "IPSET": "",
-                    "PERL": "/usr/bin/perl",
-                    "PATH": "/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin",
-                    "SHOREWALL_SHELL": "/bin/sh",
-                    "SUBSYSLOCK": "",
-                    "MODULESDIR": "",
-                    "CONFIG_PATH": "/etc/shorewall:/usr/share/shorewall",
-                    "RESTOREFILE": "",
-                    "IPSECFILE": "zones",
-                    "LOCKFILE": "",
-                    "DROP_DEFAULT": "Drop",
-                    "REJECT_DEFAULT": "Reject",
-                    "ACCEPT_DEFAULT": "none",
-                    "QUEUE_DEFAULT": "none",
-                    "NFQUEUE_DEFAULT": "none",
-                    "RSH_COMMAND": "'ssh ${root}@${system} ${command}'",
-                    "RCP_COMMAND": "'scp ${files} ${root}@${system}:${destination}'",
-                    "IP_FORWARDING": "Keep",
-                    "ADD_IP_ALIASES": "No",
-                    "ADD_SNAT_ALIASES": "No",
-                    "RETAIN_ALIASES": "No",
-                    "TC_ENABLED": "Internal",
-                    "TC_EXPERT": "No",
-                    "TC_PRIOMAP": "2 3 3 3 2 3 1 1 2 2 2 2 2 2 2 2",
-                    "CLEAR_TC": "Yes",
-                    "MARK_IN_FORWARD_CHAIN": "No",
-                    "CLAMPMSS": "No",
-                    "ROUTE_FILTER": "Yes",
-                    "DETECT_DNAT_IPADDRS": "No",
-                    "MUTEX_TIMEOUT": "60",
-                    "ADMINISABSENTMINDED": "Yes",
-                    "BLACKLISTNEWONLY": "Yes",
-                    "DELAYBLACKLISTLOAD": "No",
-                    "MODULE_SUFFIX": "ko",
-                    "DISABLE_IPV6": "No",
-                    "BRIDGING": "No",
-                    "DYNAMIC_ZONES": "No",
-                    "PKTTYPE": "Yes",
-                    "NULL_ROUTE_RFC1918": "No",
-                    "MACLIST_TABLE": "filter",
-                    "MACLIST_TTL": "",
-                    "SAVE_IPSETS": "No",
-                    "MAPOLDACTIONS": "No",
-                    "FASTACCEPT": "No",
-                    "IMPLICIT_CONTINUE": "No",
-                    "HIGH_ROUTE_MARKS": "No",
-                    "USE_ACTIONS": "Yes",
-                    "OPTIMIZE": "0",
-                    "EXPORTPARAMS": "Yes",
-                    "EXPAND_POLICIES": "Yes",
-                    "KEEP_RT_TABLES": "No",
-                    "DELETE_THEN_ADD": "Yes",
-                    "MULTICAST": "No",
-                    "DONT_LOAD": "",
-                    "AUTO_COMMENT": "Yes",
-                    "MANGLE_ENABLED": "Yes",
-                    "USE_DEFAULT_RT": "No",
-                    "RESTORE_DEFAULT_ROUTE": "Yes",
-                    "AUTOMAKE": "No",
-                    "WIDE_TC_MARKS": "No",
-                    "TRACK_PROVIDERS": "No",
-                    "ZONE2ZONE": "2",
-                    "ACCOUNTING": "Yes",
-                    "DYNAMIC_BLACKLIST": "Yes",
-                    "OPTIMIZE_ACCOUNTING": "No",
-                    "LOAD_HELPERS_ONLY": "No",
-                    "REQUIRE_INTERFACE": "No",
-                    "FORWARD_CLEAR_MARK": "Yes",
-                    "BLACKLIST_DISPOSITION": "DROP",
-                    "MACLIST_DISPOSITION": "REJECT",
-                    "TCP_FLAGS_DISPOSITION": "DROP"
-                } 
-          
-            }  
-        ]
-    }
+    [
+       {
+           "id": "client2",
+           "config":
+           {
+               "STARTUP_ENABLED": "Yes",
+               "VERBOSITY": "1",
+               "LOGFILE": "/var/log/messages",
+               "STARTUP_LOG": "/var/log/shorewall-init.log",
+               "LOG_VERBOSITY": "2",
+               "LOGFORMAT": "Shorewall:%s:%s:",
+               "LOGTAGONLY": "No",
+               "LOGRATE": "",
+               "LOGBURST": "",
+               "LOGALLNEW": "",
+               "BLACKLIST_LOGLEVEL": "",
+               "MACLIST_LOG_LEVEL": "info",
+               "TCP_FLAGS_LOG_LEVEL": "info",
+               "SMURF_LOG_LEVEL": "info",
+               "LOG_MARTIANS": "Yes",
+               "IPTABLES": "",
+               "IP": "",
+               "TC": "",
+               "IPSET": "",
+               "PERL": "/usr/bin/perl",
+               "PATH": "/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin",
+               "SHOREWALL_SHELL": "/bin/sh",
+               "SUBSYSLOCK": "",
+               "MODULESDIR": "",
+               "CONFIG_PATH": "/etc/shorewall:/usr/share/shorewall:/config/shorewall/:group",
+               "RESTOREFILE": "",
+               "IPSECFILE": "zones",
+               "LOCKFILE": "",
+               "DROP_DEFAULT": "Drop",
+               "REJECT_DEFAULT": "Reject",
+               "ACCEPT_DEFAULT": "none",
+               "QUEUE_DEFAULT": "none",
+               "NFQUEUE_DEFAULT": "none",
+               "RSH_COMMAND": "'ssh ${root}@${system} ${command}'",
+               "RCP_COMMAND": "'scp ${files} ${root}@${system}:${destination}'",
+               "IP_FORWARDING": "Keep",
+               "ADD_IP_ALIASES": "No",
+               "ADD_SNAT_ALIASES": "No",
+               "RETAIN_ALIASES": "No",
+               "TC_ENABLED": "Internal",
+               "TC_EXPERT": "No",
+               "TC_PRIOMAP": "2 3 3 3 2 3 1 1 2 2 2 2 2 2 2 2",
+               "CLEAR_TC": "Yes",
+               "MARK_IN_FORWARD_CHAIN": "No",
+               "CLAMPMSS": "No",
+               "ROUTE_FILTER": "Yes",
+               "DETECT_DNAT_IPADDRS": "No",
+               "MUTEX_TIMEOUT": "60",
+               "ADMINISABSENTMINDED": "Yes",
+               "BLACKLISTNEWONLY": "Yes",
+               "DELAYBLACKLISTLOAD": "No",
+               "MODULE_SUFFIX": "ko",
+               "DISABLE_IPV6": "No",
+               "BRIDGING": "No",
+               "DYNAMIC_ZONES": "No",
+               "PKTTYPE": "Yes",
+               "NULL_ROUTE_RFC1918": "No",
+               "MACLIST_TABLE": "filter",
+               "MACLIST_TTL": "",
+               "SAVE_IPSETS": "No",
+               "MAPOLDACTIONS": "No",
+               "FASTACCEPT": "No",
+               "IMPLICIT_CONTINUE": "No",
+               "HIGH_ROUTE_MARKS": "No",
+               "USE_ACTIONS": "Yes",
+               "OPTIMIZE": "0",
+               "EXPORTPARAMS": "Yes",
+               "EXPAND_POLICIES": "Yes",
+               "KEEP_RT_TABLES": "No",
+               "DELETE_THEN_ADD": "Yes",
+               "MULTICAST": "No",
+               "DONT_LOAD": "",
+               "AUTO_COMMENT": "Yes",
+               "MANGLE_ENABLED": "Yes",
+               "USE_DEFAULT_RT": "No",
+               "RESTORE_DEFAULT_ROUTE": "Yes",
+               "AUTOMAKE": "No",
+               "WIDE_TC_MARKS": "No",
+               "TRACK_PROVIDERS": "No",
+               "ZONE2ZONE": "2",
+               "ACCOUNTING": "Yes",
+               "DYNAMIC_BLACKLIST": "Yes",
+               "OPTIMIZE_ACCOUNTING": "No",
+               "LOAD_HELPERS_ONLY": "No",
+               "REQUIRE_INTERFACE": "No",
+               "FORWARD_CLEAR_MARK": "Yes",
+               "BLACKLIST_DISPOSITION": "DROP",
+               "MACLIST_DISPOSITION": "REJECT",
+               "TCP_FLAGS_DISPOSITION": "DROP"
+           }
+       }
+    ]
+
 
 **Interface API's:** 
 
 Interfaces API's configures the shorewall interfaces file which serves to define the firewall's network interfaces to Shorewall. The order of entries in this file is not significant in determining zone composition.
 
 
-  1. /shorewall/interfaces/net
-  2. /shorewall/interfaces/loc
-  3. /shorewall/interfaces/dmz
 
-
-**POST /shorewall/interfaces/net**
+**POST /shorewall/server/:group/interfaces/:id**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/interfaces/net                        Configures the net zone interfaces to apply rules 
+    POST /shorewall/server/:group/interfaces/:id          Configures the net zone interfaces to apply rules 
 
 
 ###Request JSON:
 
     {
-        "commonname": "hostname of client",
         "ZONE": "net",
-        "INTERFACE": "",
-        "BROADCAST": "",
+        "INTERFACE": "eth0",
+        "BROADCAST": "detect",
         "OPTIONS": "dhcp,tcpflags,logmartians,nosmurfs"
     }
 
 ###Response JSON :
 
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b", 
-        "config":        
-        {
-            "commonname": "hostname of client",
-            "ZONE": "net",
-            "INTERFACE": "eth0",
-            "BROADCAST": "detect",
-            "OPTIONS": "dhcp,tcpflags,logmartians,nosmurfs"
-        }
+    {
+       "id": ":id",
+       "entityName": "interfaces",
+       "group": ":group",
+       "config":
+       {
+           "ZONE": "net",
+           "INTERFACE": "eth0",
+           "BROADCAST": "detect",
+           "OPTIONS": "dhcp,tcpflags,logmartians,nosmurfs"
+       }
+    }
 
-    }  
-
-
-**POST /shorewall/interfaces/loc**
+**GET /shorewall/server/:group/interfaces/:id**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/interfaces/loc                        Configures the loc zone interfaces to apply rules 
+    GET   /shorewall/server/:group/interfaces/:id         Configures the net zone interfaces to apply rules 
 
-###Request JSON:
-
-    {
-        "commonname": "hostname of client",
-        "ZONE": "loc",
-        "INTERFACE": "",
-        "BROADCAST": "",
-        "OPTIONS": "dhcp,tcpflags,logmartians,nosmurfs"
-    }
 
 ###Response JSON :
 
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b", 
-        "config":
-        {
-            "commonname": "hostname of client",
-            "ZONE": "loc",
-            "INTERFACE": "",
-            "BROADCAST": "",
-            "OPTIONS": "dhcp,tcpflags,logmartians,nosmurfs"
-        }
-    }  
-
-    
-**POST /shorewall/interfaces/dmz**
-
-**Describe Service:**
-
-    Verb  URI                                             Description
-    POST /shorewall/interfaces/dmz                        Configures the dmz zone interfaces to apply rules     
-    
-    
-###Request JSON:
-
     {
-        "commonname": "hostname of client",
-        "ZONE": "dmz",
-        "INTERFACE": "",
-        "BROADCAST": "",
-        "OPTIONS": "dhcp,tcpflags,logmartians,nosmurfs"
+       "id": ":id",
+       "entityName": "interfaces",
+       "group": ":group",
+       "config":
+       {
+           "ZONE": "net",
+           "INTERFACE": "eth0",
+           "BROADCAST": "detect",
+           "OPTIONS": "dhcp,tcpflags,logmartians,nosmurfs"
+       }
     }
 
-###Response JSON :
-
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b", 
-        "config":        
-        {
-            "commonname": "hostname of client",
-            "ZONE": "net",
-            "INTERFACE": "eth0",
-            "BROADCAST": "detect",
-            "OPTIONS": "dhcp,tcpflags,logmartians,nosmurfs"
-        }
-
-    }  
     
     
 **ZONES API :**   
@@ -556,24 +496,19 @@ Interfaces API's configures the shorewall interfaces file which serves to define
 Creates zones configurations files entry for zones, Zones 4 API"s available 
 API's configures the zones file which declares our network zones. we can specify the hosts in each zone through entries in interfaces file or hosts
 
-  1. /shorewall/zones/fw
-  2. /shorewall/zones/loc
-  3. /shorewall/zones/net
-  4. /shorewall/zones/dmz
+  1. /shorewall/server/:group/zones/:id
 
-
-**POST /shorewall/zones/fw**
+**POST /shorewall/server/:group/zones/:id**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/zones/fw                              Configures the firewall zones file entry
+    POST  /shorewall/server/:group/zones/:id              Configures the firewall zones file entry
 
 ###Request JSON:
 
     {
-        "commonname": "hostname of client",
-        "ZONES": "fw",
+        "ZONES": "$FW",
         "TYPE": "firewall",
         "OPTIONS": "",
         "IN-OPTIONS": "",
@@ -582,121 +517,43 @@ API's configures the zones file which declares our network zones. we can specify
 
 ###Response JSON :
   
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",
-        "config":
-        {
-            "commonname": "hostname of client",
-            "ZONES": "fw",
-            "TYPE": "firewall",
-            "OPTIONS": "",
-            "IN-OPTIONS": "",
-            "OUT-OPTIONS": ""
-        }
-    }  
+    {
+       "id": ":id",
+       "entityName": "zones",
+       "group": ":group",
+       "config":
+       {
+           "ZONES": "$FW",
+           "TYPE": "firewall",
+           "OPTIONS": "",
+           "IN-OPTIONS": "",
+           "OUT-OPTIONS": ""
+       }
+    }
 
-
-**POST /shorewall/zones/loc**
+**GET /shorewall/server/:group/zones/:id**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/zones/loc                             Configures the loc zones file entry
+    GET  /shorewall/server/:group/zones/:id               Describes configurations of the firewall zones file entry
 
-###Request JSON:
-
-    {
-        "commonname": "hostname of client",
-        "ZONES": "loc",
-        "TYPE": "ipv4",
-        "OPTIONS": "",
-        "IN-OPTIONS": "",
-        "OUT-OPTIONS": ""
-    }
 
 ###Response JSON :
   
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",
-        "config":
-        {
-            "commonname": "hostname of client",
-            "ZONES": "loc",
-            "TYPE": "ipv4",
-            "OPTIONS": "",
-            "IN-OPTIONS": "",
-            "OUT-OPTIONS": ""
-        }
-    }  
-
-
-
-**POST /shorewall/zones/net**
-
-**Describe Service:**
-
-    Verb  URI                                             Description
-    POST /shorewall/zones/net                             Configures the net zones file entry
-
-###Request JSON:
-
     {
-        "commonname": "hostname of client",
-        "ZONES": "net",
-        "TYPE": "ipv4",
-        "OPTIONS": "",
-        "IN-OPTIONS": "",
-        "OUT-OPTIONS": ""
+       "id": ":id",
+       "entityName": "zones",
+       "group": ":group",
+       "config":
+       {
+           "ZONES": "$FW",
+           "TYPE": "firewall",
+           "OPTIONS": "",
+           "IN-OPTIONS": "",
+           "OUT-OPTIONS": ""
+       }
     }
-
-###Response JSON :
-  
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",
-        "config":
-        {
-            "commonname": "hostname of client",
-            "ZONES": "net",
-            "TYPE": "ipv4",
-            "OPTIONS": "",
-            "IN-OPTIONS": "",
-            "OUT-OPTIONS": ""
-        }
-    }  
-
-    
-**POST /shorewall/zones/dmz**
-
-**Describe Service:**
-
-    Verb  URI                                             Description
-    POST /shorewall/zones/dmz                             Configures the dmz zones file entry
-
-###Request JSON:
-
-    {
-        "commonname": "hostname of client",
-        "ZONES": "dmz",
-        "TYPE": "ipv4",
-        "OPTIONS": "",
-        "IN-OPTIONS": "",
-        "OUT-OPTIONS": ""
-    }
-
-###Response JSON :
-  
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",
-        "config":
-        {
-            "commonname": "hostname of client",
-            "ZONES": "dmz",
-            "TYPE": "ipv4",
-            "OPTIONS": "",
-            "IN-OPTIONS": "",
-            "OUT-OPTIONS": ""
-        }
-    }  
 
 
     
@@ -704,215 +561,85 @@ API's configures the zones file which declares our network zones. we can specify
 
 Policy API's configures the policy file, which defines the high-level policy for connections between zones defined in shorewall-zones. The order of entries in this file is important, This file determines what to do with a new connection request if we don't get a match from the rules file . For  each source/destination pair, the file is processed in order until a match is found ("all" will match any client or server).
 
-Policy configuration is having 5 API's,
-  1. /shorewall/policy/fw
-  2. /shorewall/policy/net
-  3. /shorewall/policy/loc
-  4. /shorewall/policy/dmz
-  5. /shorewall/policy/all
 
 
-**POST /shorewall/policy/fw**
+**POST /shorewall/server/:group/policy/:id**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/policy/fw                             Creates Policy configurations files entry for policy 
+    POST /shorewall/server/:group/policy/:id              Creates Policy configurations files entry for policy 
 
 ###Request JSON:
 
     {
-        "commonname": "hostname of client",
         "SRC_ZONE": "$FW",
         "DEST_ZONE": "net",
         "POLICY": "ACCEPT",
-        "LOG_LEVEL": "",
-        "LIMIT_BURST": ""
-    }
-
-###Response JSON :
-    
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",
-        "config":
-        {
-            "commonname": "hostname of client",
-            "SRC_ZONE": "$FW",
-            "DEST_ZONE": "net",
-            "POLICY": "ACCEPT",
-            "LOG_LEVEL": "",
-            "LIMIT_BURST": ""
-        }
-
-    }  
-
-    
-**POST /shorewall/policy/loc**
-
-**Describe Service:**
-
-    Verb  URI                                             Description
-    POST /shorewall/policy/loc                            Creates Policy configurations rules entry for local zones  
-
-###Request JSON:
-
-    {
-        "commonname": "hostname of client",
-        "SRC_ZONE": "loc",
-        "DEST_ZONE": "all",
-        "POLICY": "ACCEPT",
         "LOG_LEVEL": "info",
         "LIMIT_BURST": ""
     }
 
 ###Response JSON :
     
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",
-        "config":
-        {
-            "commonname": "hostname of client",
-            "SRC_ZONE": "loc",
-            "DEST_ZONE": "all",
-            "POLICY": "ACCEPT",
-            "LOG_LEVEL": "info",
-            "LIMIT_BURST": ""
-        }
+    {
+       "id": ":id",
+       "entityName": "policy",
+       "group": ":group",
+       "config":
+       {
+           "SRC_ZONE": "$FW",
+           "DEST_ZONE": "net",
+           "POLICY": "ACCEPT",
+           "LOG_LEVEL": "info",
+           "LIMIT_BURST": ""
+       }
+    }
 
-    }  
 
-    
-**POST /shorewall/policy/net**
+**GET /shorewall/server/:group/policy/:id**
 
 **Describe Service:**
 
     Verb  URI                                             Description
-    POST /shorewall/policy/net                            Creates Policy configurations rules entry for net zones
-
-###Request JSON:
-
-    {
-        "commonname": "hostname of client",
-        "SRC_ZONE": "net",
-        "DEST_ZONE": "all",
-        "POLICY": "ACCEPT",
-        "LOG_LEVEL": "info",
-        "LIMIT_BURST": ""
-    }
+    GET  /shorewall/server/:group/policy/:id              Describes the configurations files entry for policy 
 
 ###Response JSON :
     
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",
-        "config":
-        {
-            "commonname": "hostname of client",
-            "SRC_ZONE": "net",
-            "DEST_ZONE": "all",
-            "POLICY": "ACCEPT",
-            "LOG_LEVEL": "info",
-            "LIMIT_BURST": ""
-        }
-
-    }  
-
-
-**POST /shorewall/policy/dmz**
-
-**Describe Service:**
-
-    Verb  URI                                             Description
-    POST /shorewall/policy/dmz                            Creates Policy configurations rules entry for dmz zones
-
-###Request JSON:
-
     {
-        "commonname": "hostname of client",
-        "SRC_ZONE": "dmz",
-        "DEST_ZONE": "all",
-        "POLICY": "ACCEPT",
-        "LOG_LEVEL": "info",
-        "LIMIT_BURST": ""
+       "id": ":id",
+       "entityName": "policy",
+       "group": ":group",
+       "config":
+       {
+           "SRC_ZONE": "$FW",
+           "DEST_ZONE": "net",
+           "POLICY": "ACCEPT",
+           "LOG_LEVEL": "info",
+           "LIMIT_BURST": ""
+       }
     }
 
-###Response JSON :
-    
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",
-        "config":
-        {
-            "commonname": "hostname of client",
-            "SRC_ZONE": "dmz",
-            "DEST_ZONE": "all",
-            "POLICY": "ACCEPT",
-            "LOG_LEVEL": "info",
-            "LIMIT_BURST": ""
-        }
-
-    }  
 
 
- 
-**POST /shorewall/policy/all**
-
-**Describe Service:**
-
-    Verb  URI                                             Description
-    POST /shorewall/policy/all                            Creates Policy configurations rules entry for dmz zones
-
-###Request JSON:
-
-    {
-        "commonname": "hostname of client",
-        "SRC_ZONE": "all",
-        "DEST_ZONE": "all",
-        "POLICY": "ACCEPT",
-        "LOG_LEVEL": "info",
-        "LIMIT_BURST": ""
-    }
-
-###Response JSON :
-    
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",
-        "config":
-        {
-            "commonname": "hostname of client",
-            "SRC_ZONE": "all",
-            "DEST_ZONE": "all",
-            "POLICY": "ACCEPT",
-            "LOG_LEVEL": "info",
-            "LIMIT_BURST": ""
-        }
-
-    }  
-
- 
 
 **Rules API :**
 
 Rules API's will create/updates rules file configurations, Entries in this rules configuration file govern connection establishment by defining exceptions to the policies layed out in shorewall-policy. By default, subsequent requests and responses are automatically allowed using connection tracking. For any particular (source,dest) pair of zones, the rules are evaluated in the order in which they appear in this file and the first terminating match is the one that determines the disposition of the request. All rules are terminating except LOG and COUNT rules.
 
-  1. /shorewall/shorewall/rules/accept
-  2. /shorewall/shorewall/rules/drop
-  3. /shorewall/shorewall/rules/reject
-  4. /shorewall/shorewall/rules/dnat
-  5. /shorewall/shorewall/rules/nonat
-  6. /shorewall/shorewall/rules/queue
-  7. /shorewall/shorewall/rules/nfqueue
 
-**POST /shorewall/rules/accept**
+**POST /shorewall/server/:group/rules/:id**
 
 **Describe Service:**
 
     Verb  URI                                             Description    
-    POST /shorewall/rules/accept                          Creates the shorewall rules ACCEPT configuration file entry  in rules
+    POST /shorewall/server/:group/rules/:id               Creates the shorewall rules ACCEPT configuration file entry  in rules
 
 
 ###Request JSON:
 
+
     {
-        "commonname": "hostname of client",
         "ACTION": "ACCEPT",
         "SOURCE_zone": "$FW",
         "DEST_zone": "net",
@@ -928,31 +655,67 @@ Rules API's will create/updates rules file configurations, Entries in this rules
         "HEADERS": "",
         "SWITCH": ""
     }
+    
 
 ###Response JSON :
 
-    { 
-        "id": "7b4c38ea-268d-4a46-9e5f-d09a59f7b78b",    
-        "config":
-        {
-            "commonname": "hostname of client",
-            "ACTION": "ACCEPT",
-            "SOURCE_zone": "$FW",
-            "DEST_zone": "net",
-            "PROTO": "icmp",
-            "DEST_PORT": "",
-            "SOURCE_PORT": "",
-            "Original_DEST": "",
-            "RATE_LIMIT": "",
-            "User_Group": "",
-            "MARK": "",
-            "CONNLIMIT": "",
-            "TIME": "",
-            "HEADERS": "",
-            "SWITCH": ""
-        }
-    }  
+    {
+       "id": ":id",
+       "entityName": "rules",
+       "group": ":group",
+       "config":
+       {
+           "ACTION": "ACCEPT",
+           "SOURCE_zone": "$FW",
+           "DEST_zone": "net",
+           "PROTO": "icmp",
+           "DEST_PORT": "",
+           "SOURCE_PORT": "",
+           "Original_DEST": "",
+           "RATE_LIMIT": "",
+           "User_Group": "",
+           "MARK": "",
+           "CONNLIMIT": "",
+           "TIME": "",
+           "HEADERS": "",
+           "SWITCH": ""
+       }
+    }
 
+    
+**GET /shorewall/server/:group/rules/:id**
+
+**Describe Service:**
+
+    Verb  URI                                             Description    
+    GET /shorewall/server/:group/rules/:id                Describes the shorewall rules ACCEPT configuration file entry  in rules
+
+###Response JSON :
+
+    {
+       "id": ":id",
+       "entityName": "rules",
+       "group": ":group",
+       "config":
+       {
+           "ACTION": "ACCEPT",
+           "SOURCE_zone": "$FW",
+           "DEST_zone": "net",
+           "PROTO": "icmp",
+           "DEST_PORT": "",
+           "SOURCE_PORT": "",
+           "Original_DEST": "",
+           "RATE_LIMIT": "",
+           "User_Group": "",
+           "MARK": "",
+           "CONNLIMIT": "",
+           "TIME": "",
+           "HEADERS": "",
+           "SWITCH": ""
+       }
+    }
+    
+    
     
 **POST /shorewall/rules/drop**
 
